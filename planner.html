@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Planner</title>
+    <link rel="stylesheet" href="./Styles/general.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--HEADER-->
+    <div class="header">
+      <p class="header-today">Today, ...</p>
+      <div class="header-logo">
+        <img class="header-logo-img" src="./icons/to-do-list 64.png" />
+        <p class="header-title">My Planner</p>
+      </div>
+      <p class="header-later">v 1.1</p>
+    </div>
+    <!--HEADER-->
+
+    <div class="container">
+      <div class="days-grid-div">
+        <div class="day-div">
+          <div class="day-name js-day-0">Monday</div>
+          <div class="tasks-monday-div" style="margin: 0; overflow: auto">
+            <div class="section-todo">
+              To do :
+              <hr class="sep" />
+            </div>
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+              <button class="delete-button">&#10006;</button>
+              <button class="migrate-button">
+                <img class="migrate-img-button" src="./icons/forward.png" />
+              </button>
+            </div>
+            <div class="task-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task3</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+            <div class="section-done">
+              Done :
+              <hr class="sep" />
+            </div>
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>done task1</p>
+              <button class="delete-button">&#10006;</button>
+              <button class="migrate-button">
+                <img class="migrate-img-button" src="./icons/forward.png" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-1">Tuesday</div>
+          <div class="tasks-tuesday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-2">Wednesday</div>
+          <div class="tasks-wednesday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-3">Thursday</div>
+          <div class="tasks-thursday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-4">Friday</div>
+          <div class="tasks-friday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-5">Saturday</div>
+          <div class="tasks-saturday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name js-day-6">Sunday</div>
+          <div class="tasks-sunday-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-div">
+          <div class="day-name">Tasks Box</div>
+          <div class="tasks-box-div" style="margin: 0; overflow: auto">
+            <div class="task-div task-input-div">
+              <input type="checkbox" class="checkbox" />
+              <p>task1</p>
+            </div>
+            <div class="task-add-div">
+              <input
+                class="task-input"
+                type="text"
+                placeholder="Enter a new task"
+              />
+              <button class="add-button">Add task</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <script type="module" src="./Scripts/planner.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js
+"></script>
+    <!---->
+  </body>
+</html>

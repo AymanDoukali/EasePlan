@@ -1,0 +1,21 @@
+.grid-container {
+  background-color: bisque;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  /* Adjust the gap between grid items as needed */
+  justify-items: center;
+  /* Horizontally center grid items */
+}
+
+.grid-item {
+  width: 100px;
+  /* Set your desired width */
+  height: 100px;
+  /* Set your desired height */
+  background-color: #ccc;
+  /* Set your desired background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

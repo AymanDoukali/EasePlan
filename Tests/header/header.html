@@ -1,0 +1,25 @@
+<div class="custom-header">
+  <div class="left-container">Left</div>
+  <div class="center-container">Center</div>
+  <div class="right-container">Right</div>
+</div>
+<style>
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+
+  .left-container,
+  .right-container {
+    flex: 1;
+  }
+
+  .center-container {
+    flex: 1;
+    text-align: center;
+  }
+</style>

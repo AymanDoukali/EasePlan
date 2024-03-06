@@ -240,8 +240,8 @@ body{
 }
 .bottom-logo{
   display: flex;
-  margin-top: 24px;
-  margin-left: 16px;
+  margin-top: 14px;
+  margin-left: 10px;
 }
 @media (max-width: 850px) { 
   /*If the screen width is less than 750px*/

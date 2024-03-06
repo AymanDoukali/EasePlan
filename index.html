@@ -16,14 +16,30 @@
     <!--HEADER starts-->
     <div class="header">
       <p class="header-today">Today, ...</p>
-      <div class="header-logo">
-        <img class="header-logo-img" src="./icons/todoListWhiteIcon.png" />
-        <p class="header-title">My Planner</p>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex: 2;
+        "
+      >
+        <div class="header-logo">
+          <img class="header-logo-img" src="./icons/todoListWhiteIcon.png" />
+          <p class="header-title">My Planner</p>
+        </div>
+        <div class="slogan">
+          Achieve Your <strong style="color: #a4dcd9">Goals</strong> with
+          <strong style="color: #a4dcd9">Minimalist Planning</strong>
+        </div>
       </div>
+
       <p class="header-later">v 1.1</p>
     </div>
     <!--HEADER ends-->
 
+    <!--CONTAINER starts-->
     <div class="container">
       <div class="days-grid-div">
         <div class="day-div">
@@ -195,7 +211,9 @@
         </div>
       </div>
     </div>
-    <!---->
+    <!--CONTAINER ends-->
+    <!--BOTTOM starts-->
+    <!--BOTTOM starts-->
     <script type="module" src="./Scripts/planner.js"></script>
     <script src="
 https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js

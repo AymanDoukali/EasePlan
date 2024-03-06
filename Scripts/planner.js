@@ -25,7 +25,6 @@ const daysDefault = [
   "sunday",
   "box",
 ];
-const addTaskBox = [];
 let days = [];
 let todoList = [];
 

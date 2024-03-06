@@ -209,6 +209,14 @@ body{
   display: flex;
   justify-content: center;
 }
+
+.add-button:hover,
+.delete-button:hover,
+.migrate-button:hover
+{
+  background-color: #ffba75;
+  transition: 0.5s;
+}
 .migrate-img-button{
   width: 19px;
   height: 19px;

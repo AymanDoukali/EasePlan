@@ -32,17 +32,16 @@ let todoList = [];
 render();
 
 function render() {
-  /*Load days Array*/
+  /*Load days Array and render days*/
   if (days.length === 0) loadDays();
 
   /*Getting data from localStorage*/
   const savedTodoList = localStorage.getItem("todoList");
   savedTodoList
     ? (todoList = JSON.parse(savedTodoList))
-    : (todoList = todoListDefault);
+    : (todoList = todoListDefault); /*change before final deployment*/
 
   /*Render*/
-  updateDaysNames();
 
   for (let j = 0; j < days.length; j++) {
     const sepTodo = `
@@ -237,21 +236,17 @@ function migrateTask(id) {
 
 function loadDays() {
   const today = dayjs();
+
+  const headerTodayElement = document.querySelector(".header-today");
+  headerTodayElement.innerHTML = today.format("dddd, DD-MM-YYYY");
+
   for (let i = 0; i < 7; i++) {
     const day = today.add(i, "d");
     const dayName = day.format("dddd").toLowerCase();
     days.push(dayName);
+    /*render*/
+    const dayNameDiv = document.querySelector(`.js-day-${i}`);
+    dayNameDiv.innerHTML = day.format(`DD/MM • dddd `);
   }
   days.push("box");
-}
-
-function updateDaysNames() {
-  /*header*/
-  const headerTodayElement = document.querySelector(".header-today");
-  headerTodayElement.innerHTML = dayjs().format("dddd, DD-MM-YYYY");
-  /*day divs */
-  for (let i = 0; i < 7; i++) {
-    const dayNameDiv = document.querySelector(`.js-day-${i}`);
-    dayNameDiv.innerHTML = days[i];
-  }
 }

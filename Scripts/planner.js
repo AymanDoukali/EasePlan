@@ -178,7 +178,6 @@ function render() {
     });
   }
   console.log("rendering complete");
-  console.log("days", days);
 }
 function addButtonHTML(oldHTML, day) {
   return (

@@ -167,7 +167,9 @@ body{
 .checkbox:checked{
   background-color: #84C3D6;
 }
-
+.checkbox:hover{
+  background-color: #84C3D6;
+}
 .task-input{
   padding-left: 12px;
   padding-top: 6px;

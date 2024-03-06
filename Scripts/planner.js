@@ -1,16 +1,16 @@
 const todoListDefault = [
   {
-    task: "task1",
+    task: "task on Monday",
     day: "monday",
     checked: false,
   },
   {
-    task: "task2",
+    task: "task on Tuesday",
     day: "tuesday",
     checked: false,
   },
   {
-    task: "task3",
+    task: "task on wednesday",
     day: "wednesday",
     checked: true,
   },
@@ -42,7 +42,6 @@ function render() {
     : (todoList = todoListDefault); /*change before final deployment*/
 
   /*Render*/
-
   for (let j = 0; j < days.length; j++) {
     const sepTodo = `
       <div class="section-todo">
@@ -111,9 +110,8 @@ function render() {
 
     todoListHTML =
       sepTodo + todoTasksHTML + addButtonSectionHTML + sepDone + doneTasksHTML;
-    document.querySelector(`.tasks-${days[j]}-div`).innerHTML = todoListHTML;
+    document.querySelector(`.tasks-${j}-div`).innerHTML = todoListHTML;
   }
-
   /*Event Listeners to addTask*/
 
   /*Add Button Click events*/
@@ -125,7 +123,9 @@ function render() {
       const input = document.querySelector(`.task-${day}-input-js`);
       const task = input.value;
       input.value = "";
-
+      /* */
+      console.log(i, day);
+      /**/
       task !== "" && addTask(task, day);
     });
   }
@@ -176,7 +176,8 @@ function render() {
       render();
     });
   }
-  console.log("rendering complete");
+  /*console.log("rendering complete");*/
+  console.log(todoList);
 }
 function addButtonHTML(oldHTML, day) {
   return (

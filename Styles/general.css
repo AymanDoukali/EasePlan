@@ -215,6 +215,10 @@ body{
   padding-top: 0.8px; padding-left: 2px;
   object-fit:cover;
 }
+.bottom{
+  background-color: #004E5F;
+  color: whitesmoke;
+}
 
 @media (max-width: 850px) { 
   /*If the screen width is less than 750px*/

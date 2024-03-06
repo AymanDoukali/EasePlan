@@ -63,19 +63,6 @@ function render() {
       const todoObject = todoList[i];
       const { task, day, checked } = todoObject;
       if (day === days[j]) {
-        /*const html = `
-      <div class="task-div js-task-${i}-div">
-        <input
-          type="checkbox"
-          class="checkbox"
-        />
-        <p>${task}</p>
-        <button class="delete-button js-delete-${i}-button">&#10006;</button>
-        <button class="migrate-button js-migrate-${i}-button">
-          <img class="migrate-img-button" src="./icons/forward.png" />
-        </button>
-      </div>
-    `;*/
         if (checked) {
           const html = `
             <div class="task-div js-task-${i}-div">
@@ -103,7 +90,6 @@ function render() {
             </div>`;
           todoTasksHTML += html;
         }
-        /*todoListHTML += html;*/
       }
     }
     const addButtonSectionHTML = addButtonHTML(todoListHTML, days[j]);
@@ -176,8 +162,7 @@ function render() {
       render();
     });
   }
-  /*console.log("rendering complete");*/
-  console.log(todoList);
+  console.log("rendering complete");
 }
 function addButtonHTML(oldHTML, day) {
   return (

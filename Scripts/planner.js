@@ -1,46 +1,12 @@
-const todoListDefault = [
-  {
-    task: "task on Monday",
-    day: "monday",
-    checked: false,
-  },
-  {
-    task: "task on Tuesday",
-    day: "tuesday",
-    checked: false,
-  },
-  {
-    task: "task on wednesday",
-    day: "wednesday",
-    checked: true,
-  },
-];
-const daysDefault = [
-  "monday",
-  "tuesday",
-  "wednesday",
-  "thursday",
-  "friday",
-  "saturday",
-  "sunday",
-  "box",
-];
-let days = [];
-let todoList = [];
+import { saveTodoList, resetTodoList, todoList } from "./data.js";
+import { days, updateDatesOnPage } from "./days.js";
+import { addTask, deleteTask, migrateTask } from "./tasks.js";
 
 render();
 
 function render() {
-  /*Load days Array and render days*/
-  if (days.length === 0) loadDays();
+  updateDatesOnPage();
 
-  /*Getting data from localStorage*/
-  const savedTodoList = localStorage.getItem("todoList");
-  savedTodoList
-    ? (todoList = JSON.parse(savedTodoList))
-    : (todoList = todoListDefault); /*change before final deployment*/
-
-  /*Render*/
   for (let j = 0; j < days.length; j++) {
     const sepTodo = `
       <div class="section-todo">
@@ -108,10 +74,10 @@ function render() {
       const input = document.querySelector(`.task-${day}-input-js`);
       const task = input.value;
       input.value = "";
-      /* */
-      console.log(i, day);
-      /**/
-      task !== "" && addTask(task, day);
+      if (task !== "") {
+        addTask(task, day);
+        render();
+      }
     });
   }
   /*Add Enter press events*/
@@ -128,7 +94,10 @@ function render() {
           const task = input.value;
           input.value = "";
 
-          task !== "" && addTask(task, day);
+          if (task !== "") {
+            addTask(task, day);
+            render();
+          }
         }
       }
     }
@@ -137,14 +106,20 @@ function render() {
   /**Delete Buttons events listeners*/
   for (let i = 0; i < todoList.length; i++) {
     const deleteButton = document.querySelector(`.js-delete-${i}-button`);
-    deleteButton.addEventListener("click", () => deleteTask(i));
+    deleteButton.addEventListener("click", () => {
+      deleteTask(i);
+      render();
+    });
   }
 
   /***Migrate Buttons events listeners*/
   for (let i = 0; i < todoList.length; i++) {
     if (!todoList[i].checked) {
       const migrateButton = document.querySelector(`.js-migrate-${i}-button`);
-      migrateButton.addEventListener("click", () => migrateTask(i));
+      migrateButton.addEventListener("click", () => {
+        migrateTask(i);
+        render();
+      });
     }
   }
 
@@ -177,61 +152,4 @@ function addButtonHTML(oldHTML, day) {
     </div> 
   `
   );
-}
-function saveTodoList() {
-  localStorage.setItem("todoList", JSON.stringify(todoList));
-}
-function resetData() {
-  localStorage.clear();
-  render();
-}
-
-function addTask(task, day) {
-  todoList.push({
-    task,
-    day,
-    checked: false,
-  });
-  saveTodoList();
-  render();
-}
-function deleteTask(id) {
-  todoList.splice(id, 1);
-  saveTodoList();
-  render();
-}
-function nextDay(day) {
-  for (let i = 0; i < days.length; i++) {
-    if (days[i] === day) {
-      if (i < days.length - 1) {
-        return days[i + 1];
-      } else {
-        return days[0];
-      }
-    }
-  }
-}
-function migrateTask(id) {
-  const task = todoList[id].task;
-  const oldDay = todoList[id].day;
-  const newDay = nextDay(oldDay);
-  addTask(task, newDay);
-  deleteTask(id);
-}
-
-function loadDays() {
-  const today = dayjs();
-
-  const headerTodayElement = document.querySelector(".header-today");
-  headerTodayElement.innerHTML = today.format("dddd, DD-MM-YYYY");
-
-  for (let i = 0; i < 7; i++) {
-    const day = today.add(i, "d");
-    const dayName = day.format("dddd").toLowerCase();
-    days.push(dayName);
-    /*render*/
-    const dayNameDiv = document.querySelector(`.js-day-${i}`);
-    dayNameDiv.innerHTML = day.format(`DD/MM • dddd `);
-  }
-  days.push("box");
 }

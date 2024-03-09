@@ -1,0 +1,33 @@
+.bottom {
+  background-color: #004E5F;
+  color: whitesmoke;
+  display: flex;
+  font-size: 14px;
+}
+
+.bottom-left {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.bottom-icon {
+  width: 32px;
+}
+
+.bottom-texts {
+  margin-left: 48px;
+}
+
+.bottom-right {
+  flex: 1;
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.bottom-logo {
+  display: flex;
+  margin-top: 14px;
+  margin-left: 10px;
+}

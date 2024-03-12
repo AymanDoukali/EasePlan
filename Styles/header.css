@@ -65,9 +65,9 @@
 }
 
 .header-later {
-  text-align: end;
+  display: flex;
+  justify-content: end;
   flex: 1;
-  margin-right: 10px;
 }
 
 .header-center{

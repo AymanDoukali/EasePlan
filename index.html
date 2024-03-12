@@ -4,7 +4,6 @@
   <head>
     <title>EasePlan</title>
     <link rel="icon" type="image/png" href="./icons/todoListBlueIcon.png" />
-
     <link rel="stylesheet" href="./Styles/general.css" />
     <link rel="stylesheet" href="./Styles/header.css" />
     <link rel="stylesheet" href="./Styles/bottom.css" />
@@ -33,7 +32,37 @@
         </div>
       </div>
 
-      <p class="header-later">v 1.1</p>
+      <div class="header-later">
+        <!--<label for="export-input" class="export-button">
+          <img src="./icons/file-export.png" alt="Export" id="export-img" />
+        </label>
+        <input id="export-input" type="file" webkitdirectory />-->
+
+        <button type="file" class="export-button">
+          <img
+            class="export-button-img"
+            style="width: 24px; object-fit: contain"
+            src="./icons/file-export.png"
+          />
+          <span class="tooltip-text">Export</span>
+        </button>
+
+        <label class="import-button" for="import-input" class="import-button">
+          <img src="./icons/file-import.png" alt="Import" id="import-img" />
+          <span class="tooltip-text">Import</span>
+        </label>
+        <input id="import-input" type="file" accept="text/plain" />
+        <!--
+        
+        <button class="import-button">
+          <img
+            class="import-button-img"
+            style="width: 24px; object-fit: contain"
+            src="./icons/file-import.png"
+          />
+        </button>-->
+        <!--<p class="header-later">v 1.1</p>-->
+      </div>
     </div>
     <!--HEADER ends-->
 
@@ -216,7 +245,10 @@
       <div class="bottom-left">
         <div class="bottom-logo">
           <img class="bottom-icon" src="./icons/todoListWhiteIcon.png" />
-          <p class="header-title">EasePlan</p>
+          <p class="header-title">
+            EasePlan
+            <span style="font-size: small; font-weight: normal">v 1.2</span>
+          </p>
         </div>
         <div class="bottom-texts">
           <!--<p>EasePlan</p>-->

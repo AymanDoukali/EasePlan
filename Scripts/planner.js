@@ -1,10 +1,15 @@
-import { saveTodoList, resetTodoList, todoList } from "./data.js";
+import {
+  saveTodoList,
+  todoList,
+  exportTodoList,
+  importTodoList,
+} from "./data.js";
 import { days, updateDatesOnPage } from "./days.js";
 import { addTask, deleteTask, migrateTask } from "./tasks.js";
 
 render();
 
-function render() {
+export function render() {
   updateDatesOnPage();
 
   for (let j = 0; j < days.length; j++) {
@@ -153,3 +158,11 @@ function addButtonHTML(oldHTML, day) {
   `
   );
 }
+
+const exportButton = document.querySelector(".export-button");
+exportButton.addEventListener("click", () => exportTodoList());
+
+let upload = document.getElementById("import-input");
+upload.addEventListener("change", () => {
+  importTodoList(upload);
+});

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <label for="file-input">
+    <img src="../../icons/export.png" alt="Upload" id="upload-icon" />
+  </label>
+  <input id="file-input" type="file" accept="image/*" />
+  <button onclick="saveFile()">Save</button>
+  <script>
+    // Search for Blob objects
+    function saveFile() {
+      // File content
+      let content = "This is the content of the file.";
+
+      // Create a Blob object from the content
+      let blob = new Blob([content], { type: "text/plain" });
+
+      // Create a link element
+      let link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+
+      // Set the file name
+      link.download = "example.txt";
+
+      // Append the link to the body
+      document.body.appendChild(link);
+
+      // Trigger the click event on the link
+      link.click();
+
+      // Remove the link from the body
+      document.body.removeChild(link);
+    }
+  </script>
+</body>

@@ -1,15 +1,15 @@
-body{
+body {
   background-color: #FCF5EE;
   font-family: "Anta", Arial;
   font-size: 18px;
-  margin:0;
+  margin: 0;
 }
 
-.container{ 
+.container {
   margin-top: 100px;
 }
 
-@media (max-width: 850px) { 
+@media (max-width: 850px) {
   .container {
     margin-top: 105px;
   }

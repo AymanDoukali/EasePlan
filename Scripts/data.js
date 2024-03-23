@@ -30,6 +30,10 @@ export function editTodoList(newTodoList) {
   todoList = newTodoList;
 }
 
+export function editTask(id, newTaskName) {
+  todoList[id].task = newTaskName;
+}
+
 export let todoList = loadTodoList();
 
 export function saveTodoList() {

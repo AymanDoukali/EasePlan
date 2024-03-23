@@ -27,7 +27,8 @@
   background-color: #84C3D6;
 }
 
-.task-input {
+.task-input,
+.edit-input {
   padding-left: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -92,11 +93,11 @@
 }
 
 .import-button,
-.export-button{
+.export-button {
   border: none;
-  height:32px;
+  height: 32px;
   width: 32px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -106,16 +107,18 @@
 
   position: relative;
 }
-.export-button{
+
+.export-button {
   padding-left: 3px;
   padding-right: 0px;
 }
-.import-button{
+
+.import-button {
   padding-left: 1px;
   padding-right: 0px;
 }
 
-.export-button .tooltip-text{
+.export-button .tooltip-text {
   visibility: hidden;
   background-color: #004E5F;
   color: #fff;
@@ -131,6 +134,7 @@
   opacity: 0;
   transition: opacity 0.3s;
 }
+
 .import-button .tooltip-text {
   visibility: hidden;
   background-color: #004E5F;
@@ -147,19 +151,45 @@
   opacity: 0;
   transition: opacity 0.3s;
 }
+
 .export-button:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
+
 .import-button:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
-.tooltip-text{font-family: "Anta";}
 
-#export-input, #import-input{display: none;}
-#export-img, #import-img{
+.tooltip-text {
+  font-family: "Anta";
+}
+
+#export-input,
+#import-input {
+  display: none;
+}
+
+#export-img,
+#import-img {
   width: 24px;
   object-fit: contain;
   cursor: pointer;
+}
+
+.edit-input {
+  margin-left: 8px;
+  margin-right: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  display: none;
+}
+
+.task-p {
+  cursor: pointer;
+  word-wrap: normal;
+  overflow: auto;
+  text-wrap: wrap;
 }

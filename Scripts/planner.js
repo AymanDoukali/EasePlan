@@ -3,6 +3,7 @@ import {
   todoList,
   exportTodoList,
   importTodoList,
+  editTask,
 } from "./data.js";
 import { days, updateDatesOnPage } from "./days.js";
 import { addTask, deleteTask, migrateTask } from "./tasks.js";
@@ -52,7 +53,8 @@ export function render() {
                 type="checkbox"
                 class="checkbox js-checkbox-${i}"
               />
-              <p>${task}</p>
+              <p id="js-${i}-p" class="task-p">${task}</p>
+              <input class="edit-input js-edit-${i}-input" value="${task}"/>
               <button class="delete-button js-delete-${i}-button">&#10006;</button>
               <button class="migrate-button js-migrate-${i}-button">
                 <img class="migrate-img-button" src="./icons/forward.png" />
@@ -141,6 +143,29 @@ export function render() {
       render();
     });
   }
+
+  /****Under testing */
+  /* Edit task Names*/
+  for (let i = 0; i < todoList.length; i++) {
+    const taskP = document.querySelector(`#js-${i}-p`);
+    const taskInput = document.getElementsByClassName(`js-edit-${i}-input`)[0];
+
+    taskP.addEventListener("click", () => {
+      taskInput.style.display = "inline";
+      taskP.style.display = "none";
+    });
+
+    taskInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        taskP.innerHTML = taskInput.value;
+        taskP.style.display = "inline";
+        taskInput.style.display = "none";
+        editTask(i, taskInput.value);
+        saveTodoList();
+      }
+    });
+  }
+
   console.log("rendering complete");
 }
 function addButtonHTML(oldHTML, day) {

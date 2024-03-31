@@ -58,6 +58,7 @@
   background-color: #FAEFE4;
   cursor: pointer;
   border-radius: 0px 18px 18px 0px;
+  height:32px;
 }
 
 .delete-button,

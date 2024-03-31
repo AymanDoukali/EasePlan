@@ -222,7 +222,7 @@ function addButtonHTML(oldHTML, day) {
           placeholder="Enter a new task"
         />
         <button class="add-button add-${day}-button-js">Add task</button>
-      </div>;`
+      </div>`
     );
   }
   return (

@@ -38,14 +38,18 @@
   border-style: none;
 
   font-family: "Anta", Arial;
-  font-size: 18px;
-  width: 0.7rem;
+  font-size: 16px;
+  /*width: 0.7rem;*/
+}
+.task-input{
   flex: 8;
+  width: 0.7rem;
+  height: 20px;
 }
 
 .add-button {
   font-family: "Anta", Arial;
-  font-size: 18px;
+  font-size: 16px;
   text-wrap: nowrap;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -179,17 +183,16 @@
 }
 
 .edit-input {
-  margin-left: 8px;
-  margin-right: 6px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  /*margin-left: 1px;*/
+  /*margin-right: 100px;*/
+  /*margin-top: 12px;*/
+  /*margin-bottom: 12px;*/
+  margin-right: 10px;
   border-radius: 18px;
   display: none;
-}
-
-.task-p {
-  cursor: pointer;
-  word-wrap: normal;
-  overflow: auto;
-  text-wrap: wrap;
+  flex:1;
+  max-width:90%;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 4%;
 }

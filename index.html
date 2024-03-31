@@ -78,12 +78,24 @@
             </div>
             <div class="task-div task-input-div">
               <input type="checkbox" class="checkbox" />
-              <p>task1</p>
-              <button class="delete-button">&#10006;</button>
-              <button class="migrate-button">
-                <img class="migrate-img-button" src="./icons/forward.png" />
-              </button>
+              <!--Changes start-->
+              <div class="tasks-details-div">
+                <p class="task-time">&#128337; 8am - 10am</p>
+                <div class="tasks-name-edit-div">
+                  <p class="task-name">Task1 sample</p>
+                  <input class="edit-input" value="Task1 Sample" />
+                </div>
+
+                <!-- Comming soon <p style="font-size: 12px; margin-top: 0">task description</p>-->
+              </div>
+              <div class="tasks-buttons-div">
+                <button class="delete-button">&#10006;</button>
+                <button class="migrate-button">
+                  <img class="migrate-img-button" src="./icons/forward.png" />
+                </button>
+              </div>
             </div>
+            <!--Changes end-->
             <div class="task-div">
               <input type="checkbox" class="checkbox" />
               <p>task3</p>
@@ -227,7 +239,16 @@
               <p>task1</p>
             </div>
             <div class="task-add-div">
+              <input type="checkbox" class="checkbox" checked />
               <input
+                class="time-input"
+                type="time"
+                value="16:00"
+                onchange="
+                alert(this.value)"
+              />
+              <input
+                id="taskbox-input"
                 class="task-input"
                 type="text"
                 placeholder="Enter a new task"
@@ -269,7 +290,9 @@
       </div>
     </div>
     <!--BOTTOM ends-->
+
     <script type="module" src="./Scripts/planner.js"></script>
+
     <script src="
 https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js
 "></script>

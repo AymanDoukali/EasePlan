@@ -21,7 +21,7 @@
 .tasksBox-div {
   background-color: #A4DCD9;
   border-radius: 6px;
-  height: 200px;
+  height: 250px;
   padding: 4px 0px 0 10px 0;
   overflow: auto;
   display: flex;
@@ -38,13 +38,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content:space-between;
   margin: 0 10px 10px 10px;
   background-color: #84C3D6;
   border-radius: 35px;
   color: black;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.task-div{
+  display: grid;
+  grid-template-columns: 30px 1fr 70px;
 }
 
 .task-add-div {
@@ -81,19 +86,95 @@
   flex: 7;
 }
 
+.tasks-details-div{
+  overflow: hidden;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.task-time{
+  /*-left: -2px;*/
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top:0;
+}
+
+.task-name{
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-wrap: break-word;
+  text-wrap: wrap;
+  font-size: 16px;
+  overflow-x: auto;
+}
+
+.tasks-buttons-div{
+  flex-direction: "row";
+  display: none;
+}
+.task-div:hover > .tasks-buttons-div{
+  display: flex;
+  transition: 2s;
+}
+
+.tasks-name-edit-div{
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-bottom: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-right: 10px;
+}
+
+.add-time-checkbox{
+
+  cursor: pointer;
+}
+
+.time-input{
+  font-family: "Anta", Arial;
+  font-size: 16px;
+  border-radius: 18px 0 0 18px;
+  border-style: none;
+  border-width: 0px;
+  cursor: pointer;
+  height: 20px;
+  padding-top: 6px; 
+  padding-bottom: 6px;
+  padding-left: 6px; padding-right: 6px;
+  margin-left: 6px;
+}
+
+#taskbox-input{
+  border-radius: 0;
+}
+
+
+
+
+
 @media (max-width: 850px) {
 
   /*If the screen width is less than 750px*/
   .days-grid-div {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .days-grid-div>:nth-child(1) {
+  /*.days-grid-div>:nth-child(1) {
     grid-column: 1 / span 2;
     /*takes 2 spaces starting from the 1st column*/
-  }
+  /*}*/
 
   .days-grid-div>:nth-child(8) {
-    grid-column: 1 / span 2;
+    grid-column: 1;
   }
 }

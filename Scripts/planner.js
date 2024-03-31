@@ -41,6 +41,19 @@ export function render() {
                 type="checkbox" checked
                 class="checkbox js-checkbox-${i}"
               />
+              <!--Changes start-->
+              <div class="tasks-details-div">
+                <p class="task-time">&#128337; 8am - 10am</p>
+                <p id="js-${i}-p" class="task-name">${task}</p>
+              </div>
+              <div class="tasks-buttons-div">
+                <button class="delete-button js-delete-${i}-button">&#10006;</button>
+                <button class="migrate-button">
+                  <img class="migrate-img-button" src="./icons/forward.png" />
+                </button>
+              </div>
+            </div>
+            <!--Changes end-->
               <p>${task}</p>
               <button class="delete-button js-delete-${i}-button">&#10006;</button>
             </div>
@@ -53,13 +66,29 @@ export function render() {
                 type="checkbox"
                 class="checkbox js-checkbox-${i}"
               />
-              <p id="js-${i}-p" class="task-p">${task}</p>
+              <!--Changes start-->
+              <div class="tasks-details-div">
+                <p class="task-time">&#128337; 8am - 10am</p>
+                <div class="tasks-name-edit-div">
+                  <input class="edit-input js-edit-${i}-input" value="${task}"/>
+                  <p id="js-${i}-p" class="task-name">${task}</p>
+                </div>
+              </div>
+              <div class="tasks-buttons-div">
+                <button class="delete-button js-delete-${i}-button">&#10006;</button>
+                <button class="migrate-button js-migrate-${i}-button">
+                  <img class="migrate-img-button" src="./icons/forward.png" />
+                </button>
+              </div>
+            </div>
+            <!--Changes end-->`;
+          /*<p id="js-${i}-p" class="task-p">${task}</p>
               <input class="edit-input js-edit-${i}-input" value="${task}"/>
               <button class="delete-button js-delete-${i}-button">&#10006;</button>
               <button class="migrate-button js-migrate-${i}-button">
                 <img class="migrate-img-button" src="./icons/forward.png" />
               </button>
-            </div>`;
+            </div>`*/
           todoTasksHTML += html;
         }
       }
@@ -162,13 +191,40 @@ export function render() {
         taskInput.style.display = "none";
         editTask(i, taskInput.value);
         saveTodoList();
+      } else if (e.key === "Escape") {
+        taskP.style.display = "inline";
+        taskInput.style.display = "none";
       }
     });
   }
 
   console.log("rendering complete");
 }
+
 function addButtonHTML(oldHTML, day) {
+  if (day === "box") {
+    return (
+      oldHTML +
+      `
+      <div class="task-add-div">
+        <input type="checkbox" class="checkbox" checked />
+        <input
+          class="time-input"
+          type="time"
+          value="16:00"
+          onchange="
+          alert(this.value)"
+        />
+        <input
+          id="taskbox-input"
+          class="task-input task-${day}-input-js"
+          type="text"
+          placeholder="Enter a new task"
+        />
+        <button class="add-button add-${day}-button-js">Add task</button>
+      </div>;`
+    );
+  }
   return (
     oldHTML +
     `

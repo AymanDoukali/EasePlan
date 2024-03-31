@@ -32,7 +32,7 @@ export function render() {
 
     for (let i = 0; i < todoList.length; i++) {
       const todoObject = todoList[i];
-      const { task, day, checked } = todoObject;
+      const { task, day, time, checked } = todoObject;
       if (day === days[j]) {
         if (checked) {
           const html = `
@@ -43,7 +43,7 @@ export function render() {
               />
               <!--Changes start-->
               <div class="tasks-details-div">
-                <p class="task-time">&#128337; 8am - 10am</p>
+                <p class="task-time">&#128337; ${time}</p>
                 <p id="js-${i}-p" class="task-name">${task}</p>
               </div>
               <div class="tasks-buttons-div">
@@ -68,7 +68,7 @@ export function render() {
               />
               <!--Changes start-->
               <div class="tasks-details-div">
-                <p class="task-time">&#128337; 8am - 10am</p>
+                <p class="task-time">&#128337; ${time}</p>
                 <div class="tasks-name-edit-div">
                   <input class="edit-input js-edit-${i}-input" value="${task}"/>
                   <p id="js-${i}-p" class="task-name">${task}</p>
@@ -111,7 +111,15 @@ export function render() {
       const task = input.value;
       input.value = "";
       if (task !== "") {
-        addTask(task, day);
+        if (
+          i === 7 &&
+          document.getElementById("js-add-time-checkbox").checked
+        ) {
+          const time = document.getElementsByClassName("time-input")[0].value;
+          addTask(task, day, time);
+        } else {
+          addTask(task, day);
+        }
         render();
       }
     });
@@ -131,7 +139,16 @@ export function render() {
           input.value = "";
 
           if (task !== "") {
-            addTask(task, day);
+            if (
+              i === 7 &&
+              document.getElementById("js-add-time-checkbox").checked
+            ) {
+              const time =
+                document.getElementsByClassName("time-input")[0].value;
+              addTask(task, day, time);
+            } else {
+              addTask(task, day);
+            }
             render();
           }
         }
@@ -207,7 +224,7 @@ function addButtonHTML(oldHTML, day) {
       oldHTML +
       `
       <div class="task-add-div">
-        <input type="checkbox" class="checkbox" checked />
+        <input id="js-add-time-checkbox" type="checkbox" class="checkbox" checked />
         <input
           class="time-input"
           type="time"

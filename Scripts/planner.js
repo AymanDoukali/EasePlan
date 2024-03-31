@@ -53,11 +53,11 @@ export function render() {
                 </button>
               </div>
             </div>
-            <!--Changes end-->
-              <p>${task}</p>
+            <!--Changes end-->`;
+          /*<p>${task}</p>
               <button class="delete-button js-delete-${i}-button">&#10006;</button>
             </div>
-          `;
+          `;*/
           doneTasksHTML += html;
         } else {
           const html = `

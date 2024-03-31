@@ -16,68 +16,17 @@
   /*-webkit-appearance: none;*/
   outline: none;
   cursor: pointer;
-  transition: 1s all;
+  transition: 500ms all;
 }
 
 .checkbox:checked {
   background-color: #84C3D6;
+
 }
 
 .checkbox:hover {
   background-color: #84C3D6;
-}
-
-.task-input,
-.edit-input {
-  padding-left: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-
-  border-radius: 8px;
-  border-radius: 18px 0px 0px 18px;
-  border-style: none;
-
-  font-family: "Anta", Arial;
-  font-size: 16px;
-  /*width: 0.7rem;*/
-}
-.task-input{
-  flex: 8;
-  width: 0.7rem;
-  height: 20px;
-}
-
-.add-button {
-  font-family: "Anta", Arial;
-  font-size: 16px;
-  text-wrap: nowrap;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  flex: 3;
-  border: none;
-  background-color: #FAEFE4;
-  cursor: pointer;
-  border-radius: 0px 18px 18px 0px;
-  height:32px;
-}
-
-.delete-button,
-.migrate-button {
-  font-family: "Anta", Arial;
-  background-color: #FAEFE4;
-  /*font-size: 18px;*/
-  border-style: none;
-  border-radius: 12px;
-  cursor: pointer;
-  /*flex: 0.5;*/
-  padding: 0;
-  height: 25px;
-  width: 25px;
-  margin-left: 4px;
-  margin: 4px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  background-color: #ffba75;
 }
 
 .add-button:hover,
@@ -89,111 +38,6 @@
   transition: 0.5s;
 }
 
-.migrate-img-button {
-  width: 19px;
-  height: 19px;
-  padding-top: 0.8px;
-  padding-left: 2px;
-  object-fit: cover;
-}
-
-.import-button,
-.export-button {
-  border: none;
-  height: 32px;
-  width: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-right: 10px;
-  cursor: pointer;
-  background-color: #FAEFE4;
-
-  position: relative;
-}
-
-.export-button {
-  padding-left: 3px;
-  padding-right: 0px;
-}
-
-.import-button {
-  padding-left: 1px;
-  padding-right: 0px;
-}
-
-.export-button .tooltip-text {
-  visibility: hidden;
-  background-color: #004E5F;
-  color: #fff;
-  font-size: 12px;
-  text-align: center;
-  border-radius: 8px;
-  padding: 4px;
-  position: absolute;
-  z-index: 1;
-  top: 35px;
-  left: 55px;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.import-button .tooltip-text {
-  visibility: hidden;
-  background-color: #004E5F;
-  color: #fff;
-  font-size: 12px;
-  text-align: center;
-  border-radius: 8px;
-  padding: 4px;
-  position: absolute;
-  z-index: 1;
-  top: 35px;
-  left: 55px;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.export-button:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-
-.import-button:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-
 .tooltip-text {
   font-family: "Anta";
-}
-
-#export-input,
-#import-input {
-  display: none;
-}
-
-#export-img,
-#import-img {
-  width: 24px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.edit-input {
-  /*margin-left: 1px;*/
-  /*margin-right: 100px;*/
-  /*margin-top: 12px;*/
-  /*margin-bottom: 12px;*/
-  margin-right: 10px;
-  border-radius: 18px;
-  display: none;
-  flex:1;
-  max-width:90%;
-  font-size: 16px;
-  padding: 2px;
-  padding-left: 4%;
 }

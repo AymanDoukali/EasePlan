@@ -78,6 +78,96 @@
   flex: 2;
 }
 
+.import-button,
+.export-button {
+  border: none;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #FAEFE4;
+
+  position: relative;
+}
+
+.export-button {
+  padding-left: 3px;
+  padding-right: 0px;
+}
+
+.import-button {
+  padding-left: 1px;
+  padding-right: 0px;
+}
+
+.export-button .tooltip-text {
+  visibility: hidden;
+  background-color: #004E5F;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 4px;
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 55px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.import-button .tooltip-text {
+  visibility: hidden;
+  background-color: #004E5F;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 4px;
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 55px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.export-button:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.import-button:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+#export-input,
+#import-input {
+  display: none;
+}
+
+#export-img,
+#import-img {
+  width: 24px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 @media (max-width: 850px) {
   .header {
     height: 75px;

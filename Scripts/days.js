@@ -38,3 +38,44 @@ export function nextDay(day) {
     }
   }
 }
+
+export function sortTodoList(todoList) {
+  /*const t1 = dayjs("2000-01-01T" + todoList[7].time);
+  const t2 = dayjs("2000-01-01T" + todoList[11].time);
+  const t = dayjs("2000-01-01T" + undefined);
+  console.log(t);
+  /*console.log(todoList[7].time);
+  console.log(t1);
+  console.log(todoList[11].time);
+  console.log(t2);
+  console.log(t1.isAfter(t2));
+
+  /*const today = dayjs("12-25-1995", "MM-DD-YYYY");
+
+  console.log(today);
+
+  const now = dayjs("10:00:00", "HH:mm:ss");
+
+  console.log(now);
+  const now2 = dayjs("");
+
+  console.log(now2.isAfter(t1));
+*/
+  todoList.sort((task1, task2) => {
+    if (!task1.time && !task2.time) {
+      return 0;
+    } else if (task1.time && task2.time) {
+      const task1Time = dayjs("2000-01-01T" + task1.time);
+      const task2Time = dayjs("2000-01-01T" + task2.time);
+      if (task1Time.isAfter(task2Time)) {
+        return 1;
+      } else if (task1Time.isSame(task2Time)) {
+        return 0;
+      } else {
+        return -1;
+      }
+    } else if (!task1.time) return 1;
+    else return -1;
+  });
+  // return todoList;
+}

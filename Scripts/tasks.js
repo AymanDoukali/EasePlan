@@ -9,7 +9,6 @@ export function addTask(task, day, time) {
     checked: false,
   });
   saveTodoList();
-  console.log(todoList);
 }
 
 export function deleteTask(id) {
@@ -19,8 +18,9 @@ export function deleteTask(id) {
 
 export function migrateTask(id) {
   const task = todoList[id].task;
+  const time = todoList[id].time;
   const oldDay = todoList[id].day;
   const newDay = nextDay(oldDay);
-  addTask(task, newDay);
+  addTask(task, newDay, time);
   deleteTask(id);
 }

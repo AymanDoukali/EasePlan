@@ -229,8 +229,6 @@ function addButtonHTML(oldHTML, day) {
           class="time-input"
           type="time"
           value="16:00"
-          onchange="
-          alert(this.value)"
         />
         <input
           id="taskbox-input"

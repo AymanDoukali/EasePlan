@@ -1,4 +1,6 @@
 import { render } from "./planner.js";
+import { sortTodoList } from "./days.js";
+
 const todoListDefault = [
   {
     task: "task on Monday",
@@ -37,6 +39,7 @@ export function editTask(id, newTaskName) {
 export let todoList = loadTodoList();
 
 export function saveTodoList() {
+  sortTodoList(todoList);
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
 
